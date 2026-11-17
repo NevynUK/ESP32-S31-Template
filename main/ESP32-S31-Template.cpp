@@ -7,7 +7,7 @@
 #include "sdkconfig.h"
 
 #if CONFIG_TEMPLATE_STATUS_LED
-#include "led_strip.h"
+    #include "led_strip.h"
 #endif
 
 static const char *TAG = "app";
@@ -24,7 +24,7 @@ static led_strip_handle_t status_led_init()
 
     led_strip_rmt_config_t rmt_config = {};
     rmt_config.clk_src = RMT_CLK_SRC_DEFAULT;
-    rmt_config.resolution_hz = 10 * 1000 * 1000;    // 10 MHz: 0.1 us per tick
+    rmt_config.resolution_hz = 10 * 1000 * 1000; // 10 MHz: 0.1 us per tick
 
     led_strip_handle_t strip = nullptr;
     ESP_ERROR_CHECK(led_strip_new_rmt_device(&strip_config, &rmt_config, &strip));
@@ -45,10 +45,9 @@ extern "C" void app_main(void)
     // The hue is derived from elapsed time rather than stepped per update, so
     // the cycle time stays correct whatever the FreeRTOS tick rate is.
     constexpr uint32_t CYCLE_MS = CONFIG_TEMPLATE_STATUS_LED_CYCLE_MS;
-    constexpr uint32_t UPDATE_MS = 20;      // ~50 updates per second
+    constexpr uint32_t UPDATE_MS = 20; // ~50 updates per second
 
-    ESP_LOGI(TAG, "Colour wheel on WS2812, GPIO %d, %" PRIu32 " ms per cycle",
-             CONFIG_TEMPLATE_STATUS_LED_GPIO, CYCLE_MS);
+    ESP_LOGI(TAG, "Colour wheel on WS2812, GPIO %d, %" PRIu32 " ms per cycle", CONFIG_TEMPLATE_STATUS_LED_GPIO, CYCLE_MS);
     led_strip_handle_t led = status_led_init();
     const TickType_t start = xTaskGetTickCount();
     TickType_t last_wake = start;
