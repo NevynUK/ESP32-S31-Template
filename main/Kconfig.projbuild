@@ -1,0 +1,41 @@
+menu "Template Application"
+
+    config TEMPLATE_STATUS_LED
+        bool "Cycle a WS2812 status LED through the colour wheel"
+        default n
+        help
+            Cycle an addressable WS2812 RGB LED through the colour wheel from
+            app_main. Enable this only
+            on boards that have one fitted (for example the ESP32-S31
+            Function-Coreboard-1, where it is on GPIO 60).
+
+    if TEMPLATE_STATUS_LED
+
+        config TEMPLATE_STATUS_LED_GPIO
+            int "WS2812 data GPIO"
+            range 0 61
+            default 60
+            help
+                GPIO connected to the WS2812 data input.
+
+        config TEMPLATE_STATUS_LED_CYCLE_MS
+            int "Colour wheel cycle time (ms)"
+            range 720 60000
+            default 3000
+            help
+                Time for one full trip around the colour wheel (red, yellow,
+                green, cyan, blue, magenta and back to red). Seeing every
+                colour shows that all three channels of the WS2812 work and
+                that the colour order (GRB) is right.
+
+        config TEMPLATE_STATUS_LED_BRIGHTNESS
+            int "Brightness (1-255)"
+            range 1 255
+            default 16
+            help
+                HSV value (brightness) of the LED. WS2812s are very bright, so
+                a low value is usually enough.
+
+    endif
+
+endmenu

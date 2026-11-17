@@ -1267,6 +1267,19 @@ CONFIG_PARTITION_TABLE_MD5=y
 # end of Partition Table
 
 #
+# Template Application
+#
+# default:
+CONFIG_TEMPLATE_STATUS_LED=y
+# default:
+CONFIG_TEMPLATE_STATUS_LED_GPIO=60
+# default:
+CONFIG_TEMPLATE_STATUS_LED_CYCLE_MS=3000
+# default:
+CONFIG_TEMPLATE_STATUS_LED_BRIGHTNESS=16
+# end of Template Application
+
+#
 # Compiler options
 #
 # default:
