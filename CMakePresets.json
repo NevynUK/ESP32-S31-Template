@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "default",
+      "displayName": "ESP32-S31 (ESP-IDF 6.1)",
+      "description": "ESP-IDF 6.1 build for the ESP32-S31. Named 'default' so idf.py picks it up too, and both CLion and idf.py share build/. In CLion, needs a toolchain named \"ESP-IDF 6.1\" whose environment file is ~/.espressif/tools/activate_idf_v6.1.sh.",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "IDF_TARGET": "esp32s31"
+      },
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "ESP-IDF 6.1"
+        }
+      }
+    }
+  ]
+}
