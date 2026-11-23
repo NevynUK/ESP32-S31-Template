@@ -1,5 +1,5 @@
 dependencies:
-  idf: ">=6.1"
+  idf: ">=6.1.1"
   # Used only when CONFIG_TEMPLATE_STATUS_LED is enabled. It is not made
   # conditional on that option: the component manager resolves dependencies
   # before this project's own Kconfig is read, so such a rule is always false.

@@ -13,7 +13,7 @@
 #                                   comes from IDF unless set too)
 #   IDF_ACTIVATE=/path/activate.sh  use this IDF activation script
 #   IDF_VERSION=x.y                 use ~/.espressif/tools/activate_idf_vx.y.sh
-#   (default)                       IDF 6.1
+#   (default)                       IDF 6.1.1
 #
 # Set these in your login shell (CLion reads it at startup on macOS) or in
 # scripts/clion/tools.local.env, which is not committed.

@@ -12,10 +12,10 @@ dependencies:
   idf:
     source:
       type: idf
-    version: 6.1.0
+    version: 6.1.1
 direct_dependencies:
 - espressif/led_strip
 - idf
-manifest_hash: 7f21bbb667cb4c0a787569a3677cbe38e910aeff648f3fc050b00a9fc4a446d5
+manifest_hash: 41f9793570776bc39f78f84f9695b95f394b484c28ec10eaa04626eefe1f6d93
 target: esp32s31
 version: 3.0.0

@@ -1,13 +1,13 @@
 # ESP32-S31-Template
 
-Minimal ESP-IDF 6.1 project for the ESP32-S31 (tested on the ESP32-S31
+Minimal ESP-IDF 6.1.1 project for the ESP32-S31 (tested on the ESP32-S31
 Function-Coreboard-1), set up for building, flashing and debugging from CLion
 or the command line.
 
 ## Command line
 
 ```bash
-idf.py --preview set-target esp32s31   # once; esp32s31 is a preview target in IDF 6.1
+idf.py --preview set-target esp32s31   # once; esp32s31 is a preview target in IDF 6.1.1
 ./flash.sh                             # build + flash over /dev/cu.usbmodem*
 ./monitor.sh                           # console on UART0 (/dev/cu.usbserial-*)
 ```
